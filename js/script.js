@@ -16,7 +16,8 @@ async function startUp() {
             lastId=results.data[results.data.length-1].id;
             renderData(results.data);
             isExecuting=false;
-        }                
+        }   
+        addCounter(count);             
         
     } catch (error) {
         console.error('Error fetching data:', error);
@@ -192,15 +193,7 @@ function addCounter(counter) {
     const contain = document.querySelector('.counter');
     contain.innerHTML = '';
 
-    const countUser = document.createElement('p');
-    countUser.classList.add('number_user');
-    countUser.textContent = counter;
+    contain.textContent = counter;
 
-    const totalUser = document.createElement('p');
-    totalUser.classList.add('total_user');
-    totalUser.textContent = "/136";
-    
-    contain.appendChild(countUser);
-    contain.appendChild(totalUser);
 }
 
