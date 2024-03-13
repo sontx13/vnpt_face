@@ -89,11 +89,12 @@ setInterval(newUserCheckedIn, 5000);
 async function openPopup(user) {
 
     isExecuting=true;
-    var container = document.querySelector('.modal');
-    container.innerHTML = '';
+    //var container = document.querySelector('.modal');
+    //container.innerHTML = '';
 
-    addUserCard('i','.modal',user.avatar,user.fullName,user.organization,'Chào mừng đến với đại hội',user.welcomeMp3)
+    //addUserCard('i','.modal',user.avatar,user.fullName,user.organization,'Chào mừng đến với đại hội',user.welcomeMp3)
 
+    addUserModel(user.avatar,user.fullName);
     $('#modal-container').removeAttr('class').addClass("one");
     $('body').addClass('modal-active');
 
@@ -189,11 +190,17 @@ function playAudio(id) {
     mp3.play();
 }
 
+function addUserModel(avatar,fullName) {
+    const nameElement = document.querySelector('.m_fullname');
+    nameElement.textContent = fullName;
+
+    const imgElement = document.querySelector('.image-checkin');
+    imgElement.src = avatar;
+
+}
 function addCounter(counter) {
     const contain = document.querySelector('.counter');
     contain.innerHTML = '';
-
     contain.textContent = counter;
-
 }
 
