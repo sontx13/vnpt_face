@@ -16,7 +16,6 @@ async function startUp() {
             lastId=results.data[results.data.length-1].id;
             renderData(results.data);
             isExecuting=false;
-            count = results.data.length;
         }                
         
     } catch (error) {
@@ -33,8 +32,11 @@ function renderData(listUser) {
     container.innerHTML = '';
 
     listUser.forEach(item => {
-        addUserCard(item.id,'.u-repeater',item.avatar,item.fullName,item.organization,'',item.welcomeMp3)
+        addUserCard(item.id,'.u-repeater',item.avatar,item.fullName,item.organization,'',item.welcomeMp3);
+     
     });
+       count = listUser.length;
+       addCounter(count);
     isExecuting=false;
 }
 
@@ -66,6 +68,7 @@ async function newUserCheckedIn(){
             openPopup(newUser);
             playAudio(newUser.id);
             count = count + 1;
+            addCounter(count);
         }             
 
         lastId=newUser.id;
@@ -186,11 +189,18 @@ function playAudio(id) {
 }
 
 function addCounter(counter) {
-    const counter = document.querySelector('.counter');
+    const contain = document.querySelector('.counter');
+    contain.innerHTML = '';
 
     const countUser = document.createElement('p');
     countUser.classList.add('number_user');
-    
+    countUser.textContent = counter;
 
+    const totalUser = document.createElement('p');
+    totalUser.classList.add('total_user');
+    totalUser.textContent = "/136";
+    
+    contain.appendChild(countUser);
+    contain.appendChild(totalUser);
 }
 
