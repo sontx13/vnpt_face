@@ -86,7 +86,7 @@ async function newUserCheckedIn(){
 
 
 
-setInterval(newUserCheckedIn, 5000);
+setInterval(newUserCheckedIn, 15000);
 
 async function openPopup(user) {
 
@@ -100,7 +100,7 @@ async function openPopup(user) {
     setTimeout(function() {
         closePopup();
         isExecuting=false;
-    }, 5000000);
+    }, 15000);
      console.log("running" + isExecuting);   
    
 }
@@ -128,7 +128,7 @@ async function addUserCard(index,classStr,avatar,fullName,organization) {
 
         if (avatar !== "") {
             const img = document.createElement('img');
-            var classes_img = 'u-border-7 u-border-palette-2-base u-image u-image-circle u-image-1 button';
+            var classes_img = 'u-border-7 u-border-palette-4-base u-image u-image-circle u-image-1 button';
             img.classList.add(...classes_img.split(' '));
             img.src = avatar;
             card_detail.appendChild(img);

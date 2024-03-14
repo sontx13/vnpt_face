@@ -35,6 +35,7 @@
 }
 
 .modal .u-modal{
+    border: 5px solid white;
     background-image: url(/image/bg-checkin-3.png);           
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -92,8 +93,8 @@
     border-radius: 50% !important;
 }
 .modal .checkin[_ngcontent-ywd-c226] .noidung-loichao[_ngcontent-ywd-c226] .logo-preview[_ngcontent-ywd-c226] {
-    max-width: 240px;
-    height: 63px;
+    max-width: 173px;
+    height: 180px;
     -o-object-fit: cover;
     object-fit: cover;
 }
@@ -198,23 +199,27 @@
 
 .column-1{
   float: left;
-  width: 20%;
+  width: 25%;
 }
 
 .column-2{
   float: left;
-  width: 50%;
+  width: 45%;
 }
 
 .column-3{
   float: left;
-  width: 30%;
+  width: 18%;
+}
+
+.column-4{
+  float: left;
+  width: 12%;
 }
 
 .logo{
-  float: left;
+  float: right;
   margin-top: 20px;
-  margin-left: 40px;
 }
 
 .u-xl-mode .u-sheet{
@@ -235,7 +240,7 @@
 }
 
 .u-counter .u-layout-cell-5 {
-    min-height: 250px;
+    min-height: 220px;
 }
 
 .u-counter h4{
