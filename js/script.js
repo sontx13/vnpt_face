@@ -86,7 +86,7 @@ async function newUserCheckedIn(){
 
 
 
-setInterval(newUserCheckedIn, 15000);
+setInterval(newUserCheckedIn, 8000);
 
 async function openPopup(user) {
 
@@ -100,7 +100,7 @@ async function openPopup(user) {
     setTimeout(function() {
         closePopup();
         isExecuting=false;
-    }, 15000);
+    }, 8000);
      console.log("running" + isExecuting);   
    
 }
@@ -168,6 +168,9 @@ function addUserPopup(avatar,fullName,organization) {
 
     const imgElement = document.querySelector('.image-checkin');
     imgElement.src = avatar;
+
+    const organizationElement = document.querySelector('.m_organization');
+    organizationElement.textContent = organization;
 
 }
 function addCounter(counter) {

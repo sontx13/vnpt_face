@@ -1,3 +1,90 @@
+.header{
+  margin-top: 30px;
+}
+
+.u-header-1{
+  font-size: 55px;
+  color: #ee141f;
+  font-weight: bold;
+  text-shadow: 1px 0 0 white, -1px 0 0 white, 0 1px 0 white, 0 -1px 0 white, 1px 1px white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+  margin: 15px auto 0;
+}
+
+.u-header-2{
+  font-size: 42px;
+  font-weight: bold;
+  margin: 15px auto 0;
+}
+
+.u-header-3{
+  font-size: 40px;
+  color: #f46f36;
+  font-weight: bold;
+  text-shadow: 1px 0 0 white, -1px 0 0 white, 0 1px 0 white, 0 -1px 0 white, 1px 1px white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+  margin: 15px auto 0;
+}
+
+.u-section-1{
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .column-1 img{
+      width: 50px;
+      height: 50px;
+  }
+
+  .logo{
+    float: left;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  .column-1{
+    width: 10%;
+  }
+
+  .column-2{
+    width: 80%;
+  }
+
+  .column-3{
+    width: 10%;
+  }
+
+  .u-header-1{
+    font-size: 30px;
+  }
+
+  .u-header-2{
+    line-height: 30px;
+    font-size: 20px;
+  }
+
+  .u-header-3{
+    font-size: 15px;
+  }
+}
+.u-section-1 .u-sheet-1 {
+   min-height: 1490px; 
+}
+
+.u-section-1 .u-text-1 {
+  margin: 60px auto 0;
+}
+
+.u-section-1 .u-list-1 {
+  margin-top: 20px !important;
+  margin-bottom: 0;
+}
+
+.u-section-1 .u-repeater-1 {
+  grid-template-columns: repeat(4, 25%);
+  /* min-height: 1197px; */
+  grid-gap: 0px;
+}
+
+
 @media (max-width: 1400px){
     .u-section-1 .u-image-1{
         height: 140px;
@@ -209,7 +296,7 @@
 
 .column-3{
   float: left;
-  width: 18%;
+  width: 20%;
 }
 
 .column-4{

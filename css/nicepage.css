@@ -7212,7 +7212,7 @@ section.u-image:not(.u-hover-box),
   margin: 0 auto;
 }
 .u-xl-mode .u-sheet {
-  /* width: var(--theme-sheet-width-xl); */
+  width: var(--theme-sheet-width-xl);
 }
 .u-xxl-mode .u-sheet {
   width: var(--theme-sheet-width-xxl);
