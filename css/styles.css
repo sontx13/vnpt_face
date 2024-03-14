@@ -29,7 +29,7 @@
 }
 
 .u-section-1 .u-image-1 {
-  border-color: #e7ed21 !important;
+  border-color: #fff !important;
   height: 210px;
   width: 210px;
   /* background-image: url("//images03.nicepagecdn.com/c461c07a441a5d220e8feb1a/11824bb9791250b9b0281f98/2.jpg"); */
@@ -112,7 +112,7 @@
     }
 
     .modal{
-        width: 80%;
+        width: 60%;
         min-height: 600px;
         padding: 0px !important;
         /* background-image: url(/image/bg-checkin-3.png); */
@@ -124,7 +124,7 @@
 }
 
 .modal{
-    width: 80%;
+    width: 60%;
     min-height: 800px;
     border-radius: 20px !important;
     padding: 0px !important;
@@ -146,7 +146,8 @@
     font-size: 38px;
 }
 .modal .slogan{
-    margin-bottom: 85px;
+    width: 96%;
+    border-top: 1px solid #fff;
     bottom: 0;
     position: absolute !important;
 }
@@ -162,15 +163,30 @@
     color: #fff;
     font-weight: bold;
     font-size: 19px;
+    padding-top: 1px;
+}
+
+.modal .slogan-vnface{
+    float: left;
+}
+
+.modal .slogan-vnpt{
+    float: right;
 }
 
 .modal .logo_vnface{
+    padding-bottom: 10px;
+    padding-top: 5px;
     width: 150px;
+}
+
+.modal .logo_vnpt{
+    width: 90px;
 }
 .modal .u-modal{
     border: 5px solid white;
     border-radius: 20px;
-    background-image: url(/image/bg-checkin-3.png);           
+    background-image: url(/image/bg-checkin-1.png);           
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }

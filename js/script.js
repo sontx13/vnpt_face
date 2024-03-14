@@ -100,7 +100,7 @@ async function openPopup(user) {
     setTimeout(function() {
         closePopup();
         isExecuting=false;
-    }, 800000);
+    }, 8000);
      console.log("running" + isExecuting);   
    
 }
