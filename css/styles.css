@@ -28,6 +28,15 @@
   color: #fff;
 }
 
+.u-section-1 .u-image-1 {
+  border-color: #e7ed21 !important;
+  height: 210px;
+  width: 210px;
+  /* background-image: url("//images03.nicepagecdn.com/c461c07a441a5d220e8feb1a/11824bb9791250b9b0281f98/2.jpg"); */
+  background-position: 50% 50%;
+  margin: 0 auto;
+}
+
 @media (max-width: 767px) {
   .column-1 img{
       width: 50px;
@@ -117,19 +126,57 @@
 .modal{
     width: 80%;
     min-height: 800px;
+    border-radius: 20px !important;
     padding: 0px !important;
     /* background-image: url(/image/bg-checkin-3.png); */
 }
+.modal .daibieu{
+     color: red;
+    font-size: 38px;
+    text-shadow: 1px 0 0 white, -1px 0 0 white,
+    0 1px 0 white, 0 -1px 0 white, 1px 1px white,
+    -1px -1px 0 white, 1px -1px 0 white,
+    -1px 1px 0 white;
+    font-weight: bold;
+}
 
+.modal .chaomung{
+    color: #fff;
+    font-weight: 700;
+    font-size: 38px;
+}
+.modal .slogan{
+    margin-bottom: 85px;
+    bottom: 0;
+    position: absolute !important;
+}
+
+.modal .slogan-text{
+    margin-left: 15px;
+    color: #fff;
+    font-size: 19px;
+}
+
+.modal .vnpt-text{
+    margin-left: 15px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.modal .logo_vnface{
+    width: 150px;
+}
 .modal .u-modal{
     border: 5px solid white;
+    border-radius: 20px;
     background-image: url(/image/bg-checkin-3.png);           
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
 .modal .u-modal .noidung-loichao{
-   min-height: 800px
+   min-height: 800px;
 }
 
 .modal .ml-auto, .modal .mx-auto {
@@ -284,9 +331,14 @@
     margin: 12px 0 0;
 }
 
+.column-0{
+  float: left;
+  width: 10%;
+}
+
 .column-1{
   float: left;
-  width: 25%;
+  width: 10%;
 }
 
 .column-2{
