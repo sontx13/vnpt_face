@@ -5,6 +5,8 @@ var count = 0;
 // Đang lấy thêm user checkin
 var isExecuting=false;
 const API_URL='https://face.vnptlab.com';
+
+
 // Function to fetch data from the API
 async function startUp() {
     try {
@@ -33,11 +35,10 @@ function renderData(listUser) {
     container.innerHTML = '';
 
     listUser.forEach(item => {
-        addUserCard(item.id,'.u-repeater',item.avatar,item.fullName,item.organization,'',item.welcomeMp3);
-     
+        addUserCard(item.id,'.u-repeater',item.avatar,item.fullName,item.organization);     
     });
-       count = listUser.length;
-       addCounter(count);
+    count = listUser.length;
+    addCounter(count);
     isExecuting=false;
 }
 
@@ -64,10 +65,11 @@ async function newUserCheckedIn(){
    
         if(newUser.id > lastId){     
             console.log("running" + isExecuting);   
-            addUserCard(newUser.id,'.u-repeater',newUser.avatar,newUser.fullName,newUser.organization,'',newUser.welcomeMp3);                
+            addUserCard(newUser.id,'.u-repeater',newUser.avatar,newUser.fullName,newUser.organization);                
             //closePopup();
-            openPopup(newUser);
-            playAudio(newUser.id);
+            openPopup(newUser);   
+            var audio = new Audio(newUser.welcomeMp3);
+            audio.play();
             count = count + 1;
             addCounter(count);
         }             
@@ -89,12 +91,8 @@ setInterval(newUserCheckedIn, 5000);
 async function openPopup(user) {
 
     isExecuting=true;
-    //var container = document.querySelector('.modal');
-    //container.innerHTML = '';
-
-    //addUserCard('i','.modal',user.avatar,user.fullName,user.organization,'Chào mừng đến với đại hội',user.welcomeMp3)
-
-    addUserModel(user.avatar,user.fullName);
+    
+    addUserPopup(user.avatar,user.fullName,user.organization);
     $('#modal-container').removeAttr('class').addClass("one");
     $('body').addClass('modal-active');
 
@@ -102,7 +100,7 @@ async function openPopup(user) {
     setTimeout(function() {
         closePopup();
         isExecuting=false;
-    }, 5000);
+    }, 5000000);
      console.log("running" + isExecuting);   
    
 }
@@ -116,7 +114,7 @@ function closePopup() {
 
 
 
-async function addUserCard(index,classStr,avatar,fullName,organization,text,mp3) {
+async function addUserCard(index,classStr,avatar,fullName,organization) {
     var container = document.querySelector(classStr);
 
     if (container) {
@@ -134,6 +132,7 @@ async function addUserCard(index,classStr,avatar,fullName,organization,text,mp3)
             img.classList.add(...classes_img.split(' '));
             img.src = avatar;
             card_detail.appendChild(img);
+            // Đóng thẻ
         }
 
         if (fullName !== "") {
@@ -152,30 +151,6 @@ async function addUserCard(index,classStr,avatar,fullName,organization,text,mp3)
             card_detail.appendChild(body);
         }
         
-        if (text !== "") {
-            const des = document.createElement('p');
-            var classes_des = 'u-align-center u-text u-text-4';
-            des.classList.add(...classes_des.split(' '));
-            des.textContent = text;
-            card_detail.appendChild(des);
-        }
-      
-        if (mp3 !== "") {
-            const audio = document.createElement('audio');
-            audio.classList.add('mp3_'+index);
-            audio.src = mp3;
-            audio.controls = true;
-            //audio.autoplay = true;
-            audio.style.display = 'none';
-            card_detail.appendChild(audio);
-
-            const button = document.createElement('button');
-            button.textContent = 'Play';
-            button.onclick = playAudio;
-            button.style.display = 'none';
-            card_detail.appendChild(button);
-        }
-
         card.appendChild(card_detail);
 
         container.insertBefore(card, container.firstChild);
@@ -185,12 +160,9 @@ async function addUserCard(index,classStr,avatar,fullName,organization,text,mp3)
     }
 }
 
-function playAudio(id) {
-    const mp3 = document.querySelector('.mp3_'+id);
-    mp3.play();
-}
 
-function addUserModel(avatar,fullName) {
+
+function addUserPopup(avatar,fullName,organization) {
     const nameElement = document.querySelector('.m_fullname');
     nameElement.textContent = fullName;
 
